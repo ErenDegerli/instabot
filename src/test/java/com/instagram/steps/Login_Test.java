@@ -6,9 +6,11 @@ import java.io.IOException;
 
 public class Login_Test extends TestBase{
 
+
     @Test
     public void getLoginPage() throws IOException, InterruptedException {
         loginPage.getLoginPage();
         loginPage.doLogin();
+        homePage.followPage("SurrealRoom");
     }
 }

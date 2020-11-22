@@ -20,17 +20,24 @@ public class LoginPage extends Base {
     @FindBy(css = "button[class='sqdOP  L3NKy   y3zKF     ']")
     private WebElement submitBtn;
 
+    @FindBy(xpath = "/html/body/div[4]/div/div/div/div[3]/button[2]")
+    private WebElement notNowBtn;
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    public void getLoginPage() throws IOException {
+    public void getLoginPage() throws IOException, InterruptedException {
         driver.get(PropertyReader.getInstance().getProperty(PropKey.URL.getPropVal()));
+        Thread.sleep(2000);
     }
 
-    public void doLogin() throws IOException {
+    public void doLogin() throws IOException, InterruptedException {
         waitUntilClickable(username).sendKeys(PropertyReader.getInstance().getProperty("username"));
+        Thread.sleep(1000);
         password.sendKeys(PropertyReader.getInstance().getProperty("password"));
         submitBtn.click();
+        Thread.sleep(3000);
+        notNowBtn.click();
     }
 }
