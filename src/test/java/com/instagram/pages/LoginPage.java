@@ -11,13 +11,13 @@ import java.io.IOException;
 
 public class LoginPage extends Base {
 
-    @FindBy(css = "")
+    @FindBy(css = "input[name='username']")
     private WebElement username;
 
-    @FindBy(css = "")
+    @FindBy(css = "input[name='password']")
     private WebElement password;
 
-    @FindBy(css = "")
+    @FindBy(css = "button[class='sqdOP  L3NKy   y3zKF     ']")
     private WebElement submitBtn;
 
     public LoginPage(WebDriver driver) {
@@ -26,5 +26,11 @@ public class LoginPage extends Base {
 
     public void getLoginPage() throws IOException {
         driver.get(PropertyReader.getInstance().getProperty(PropKey.URL.getPropVal()));
+    }
+
+    public void doLogin() throws IOException {
+        waitUntilClickable(username).sendKeys(PropertyReader.getInstance().getProperty("username"));
+        password.sendKeys(PropertyReader.getInstance().getProperty("password"));
+        submitBtn.click();
     }
 }

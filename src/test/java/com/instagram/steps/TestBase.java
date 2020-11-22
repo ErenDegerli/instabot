@@ -19,8 +19,8 @@ public class TestBase extends DriverFactory {
         loginPage = new LoginPage(driver);
     }
 
-    @AfterEach
+    /*@AfterEach
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }
