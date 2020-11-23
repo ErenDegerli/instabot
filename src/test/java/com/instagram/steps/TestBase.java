@@ -1,6 +1,7 @@
 package com.instagram.steps;
 
 import com.instagram.driver.DriverFactory;
+import com.instagram.pages.CompanyPage;
 import com.instagram.pages.GmailHomePage;
 import com.instagram.pages.HomePage;
 import com.instagram.pages.LoginPage;
@@ -15,14 +16,15 @@ public class TestBase extends DriverFactory {
     public WebDriver driver;
     public LoginPage loginPage;
     public HomePage homePage;
-    public GmailHomePage gmailHomePage;
+    public CompanyPage companyPage;
 
     @BeforeEach
     public void init() throws IOException {
         driver = DriverFactory.getDriver();
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-        gmailHomePage = new GmailHomePage(driver);
+        companyPage = new CompanyPage(driver);
+
     }
 
     /*@AfterEach

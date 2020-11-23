@@ -25,7 +25,7 @@ public class HomePage extends Base {
         searchBox.sendKeys(pageName);
         Thread.sleep(1000);
         chooseFirst.click();
-        Thread.sleep(1000);
-        followBtn.click();
+        Thread.sleep(3000);
+        //followBtn.click();
     }
 }

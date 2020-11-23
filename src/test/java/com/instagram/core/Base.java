@@ -36,7 +36,7 @@ public abstract class Base {
 
     public WebElement scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();");
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
         return element;
     }
 }
